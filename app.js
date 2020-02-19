@@ -14,7 +14,7 @@ app.get('/apps', (req, res) =>{
 
   const validGenre = ['Action', 'Puzzle', 'Strategy', 'Casual', 'Arcade', 'Card'];
 
-  if ('genre' in req.query && !validGenre.inludes(genres)){
+  if ('genre' in req.query && !validGenre.includes(genres)){
     return res.status(400).send('Genres must match with validGenres');
   }
 
@@ -38,6 +38,4 @@ app.get('/apps', (req, res) =>{
 
 });
 
-app.listen(8000, () => {
-  console.log('Express is listening on 8000');
-});
+module.exports = app;
